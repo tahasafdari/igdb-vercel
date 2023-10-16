@@ -4,7 +4,7 @@ const nextConfig = {}
 module.exports = {
   nextConfig,
   images: {
-    domains: ['**'],
+    domains: ['**', 'harmonia.ink'],
     remotePatterns: [
         {
             protocol: "https",
