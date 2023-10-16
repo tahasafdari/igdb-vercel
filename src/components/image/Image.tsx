@@ -7,9 +7,10 @@ type ChakraNextImageProps = Partial<ImageProps> &
     Partial<BoxProps> & {
         nextProps?: Partial<ComponentProps<typeof NextImage>>;
     };
-const uploadServerURL = process.env.NEXT_PUBLIC_UPLOAD_SERVER_URL as string;
+
 function parseAssetPrefix(image: string) {
-    const alreadyHasHttp = image.match('http' || 'https')
+    // const alreadyHasHttp = image.match('http' || 'https')
+    const alreadyHasHttp = image.startsWith('http://') || image.startsWith('https://');
     if (alreadyHasHttp) return image;
 
     const prefix = process.env.NEXT_PUBLIC_BASE_PATH || '';
@@ -29,7 +30,7 @@ export function Image(props: ChakraNextImageProps) {
                 layout="fill"
                 objectFit="fill"
                 src={parseAssetPrefix(imageUrl)}
-                alt={alt}
+                alt={alt}s
                 {...nextProps}
             />
         </Box>
