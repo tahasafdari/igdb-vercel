@@ -9,7 +9,7 @@ type ChakraNextImageProps = Partial<ImageProps> &
     };
 const uploadServerURL = process.env.NEXT_PUBLIC_UPLOAD_SERVER_URL as string;
 function parseAssetPrefix(image: string) {
-    const alreadyHasHttp = image.match('https');
+    const alreadyHasHttp = image.match('http' || 'https')
     if (alreadyHasHttp) return image;
 
     const prefix = process.env.NEXT_PUBLIC_BASE_PATH || '';
