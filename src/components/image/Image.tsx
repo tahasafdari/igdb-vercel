@@ -13,7 +13,7 @@ function parseAssetPrefix(image: string, isProfile?: boolean) {
     if (isProfile) {
         return uploadServerURL + image;
     }
-    const alreadyHasHttp = image.match('http');
+    const alreadyHasHttp = image.match('https');
     if (alreadyHasHttp) return image;
 
     const prefix = process.env.NEXT_PUBLIC_BASE_PATH || '';
