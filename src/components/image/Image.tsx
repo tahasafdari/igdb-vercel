@@ -30,7 +30,7 @@ export function Image(props: ChakraNextImageProps) {
                 layout="fill"
                 objectFit="fill"
                 src={parseAssetPrefix(imageUrl)}
-                alt={alt}s
+                alt={alt}
                 {...nextProps}
             />
         </Box>
