@@ -5,8 +5,6 @@ module.exports = {
   async headers() {
     return [
       {
-        // matching all API routes
-        source: "http://harmonia.ink:5001/file/",
         headers: [
           { key: "Access-Control-Allow-Credentials", value: "true" },
           { key: "Access-Control-Allow-Origin", value: "*" },
@@ -20,10 +18,6 @@ module.exports = {
   nextConfig,
   images: {
     remotePatterns: [
-        {
-          protocol: "https",
-          hostname: "**"
-        },
         {
             protocol: "http",
             hostname: "**"
